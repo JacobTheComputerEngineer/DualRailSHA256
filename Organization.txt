@@ -1,0 +1,42 @@
+shaDualRail.cpp is the main work of the project
+It utilizes 
+    KSAdderDR.cpp
+    basicGatesDR.cpp
+    shaStandards.cpp
+It is a complete Dual-Rail encoding of a SHA256 implementation
+DR_SHA256_Pipelined is the grand piece of work to put forward
+    It is a simulator that increments time by the gate
+    Data flows from one cell to the next as soon as all data members are ready
+
+pipelineSHA256.cpp is a synchronous pipelined version of SHA256
+It utilizes
+    KSAdder.cpp
+    basicGates.cpp
+    shaStandards.cpp
+The structure is written exactly the same as the dual rail version for comparison purposes
+Instead of flowing the data forward as it is ready, all data will flow forwards based on a clock tick
+This tick is the length of the longest critical path across all stages
+For this version, the gatecount per cell is irrelevant and should be ignored
+The KSA32 gate delay is found by int findKSA32Delay() in KSAdder.cpp
+The critical path is calculated with 4 KSA32, 1 XOR2, 1 AND, 1 NOT
+These defines are present in basicGates.cpp
+The define for KSA32DELAY is above int findKSA32Delay()
+In the present configuration, clock is 180 gates
+With a pipeline of 113, latency of 20340 gates and throughput of 1 per/180 gates
+
+The pipeline structure is as follows
+48 rounds of filling the message
+64 rounds of compression
+1 final adding round
+
+Cases that take longer than 1 round of hashing ( > 512 bits ) were deemed out of scope for determining the speed improvement between asynchronous to not asynchronous
+The resulting H can be stored and used to initialize the new H at the start of the next hashing round
+This interleaving allows for 113 hashes to be completed before the second round can be started
+This optimization happens regardless of asynchronous behavior, and so irrelevant to the implementation
+
+sha.cpp is a standard c++ implementation of SHA256
+It utilizes
+    shaStandards.cpp
+It was used for validity
+It is derived from standardSHA256.py, which is a standard SHA256 implementation in python
+I switched from python to c++ due to my knowledge of c++, speed of simulation, and better ability to manipulate bits
