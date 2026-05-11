@@ -2,6 +2,10 @@
 
 Welcome to the README for DualRailSHA256. Within are 3 different versions of the same SHA256 algorithm, as well as simulation for two of them.
 
+Asynchronous architecture is a new computing concept. Within is a simulation to compare equivalent synchronous and a novel dual rail asynchronous architecture.
+Within the DR async simulation, the simulation itself performs the handshake between two cells as well as emulate a Muller C-Element.
+The sync pipelined simulation moves data forward through each stage based on the critical path. 
+
 shaStandards.cpp contains the preprocessing, input sequence, and hashing constants k.
 This file is included in sha.cpp, pipelineSHA256.cpp, and shaDualRail.cpp.
 
@@ -30,4 +34,10 @@ Upon compile and run, it will print the hash of every input in the sequence
 
 For the pipeline and DR files, there exists a function
 findKSA32Delay() and findDRKSA32Delay() respectively. This is a playground to give test inputs to the adder. 
+This is also how I found the critical path of the KSA32 adder. 
+
 For changes and personal tests, follow the form of the code.
+This code contains a smaller library of primitive dual rail gates (DRGs). 
+These DRGs combined with the DR class for encoded bits allow for calculations on when data flows through a block.
+getLatestArrival32B acts as the Muller C-Element by presenting data to the next cell only when the last bit has been resolved.
+By moving getLatestArrival32B you can adjust the effective pipeline of the implementation.
