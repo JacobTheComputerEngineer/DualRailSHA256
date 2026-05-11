@@ -352,12 +352,12 @@ DR DR_NOT(DR a)
         return out;
     }
 
-    // Gate 2
-    out.T = !a.T;
-    out.F = !a.F;
+    out.T = a.F;
+    out.F = a.T;
 
     out.tT = addDelay(a.tF, NOTDELAY);
     out.tF = addDelay(a.tT, NOTDELAY);
+    
 
     return out;
 }

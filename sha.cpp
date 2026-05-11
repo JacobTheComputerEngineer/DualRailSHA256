@@ -98,18 +98,18 @@ int main()
 {
     std::string input = "abc";
 
-    std::ofstream file("shaSTANDARD.txt");
+    // std::ofstream file("shaSTANDARD.txt");
 
     for(int i=0;i<vectorLength;i++)
     {
         std::vector<uint8_t> hash = standardSHA256(inputs[i]);
         std::string myHash = toHex(hash);
 
-        // std::cout << myHash << "\n";
-        file << myHash << std::endl;
+        std::cout << myHash << "\n";
+        // file << myHash << std::endl;
     }
 
-    file.close();
+    // file.close();
     
 
     return 0;

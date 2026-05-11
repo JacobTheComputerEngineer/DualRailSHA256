@@ -474,6 +474,39 @@ int DRKSA32Wrapper(unsigned int aInt, unsigned int bInt, unsigned int cInt)
     out = DR_KSA32(a, out.B, c);
     max = getLatestArrival32B(out.B);
     // std::cout << "a = " << aInt << " : b = " << bInt << " : c = " << cInt << " | Last bit time: " << max << std::endl;
+    // std::cout << "out.B.B0.tT : " << out.B.B0.tT << " | out.B.B0.tF : " << out.B.B0.tF << std::endl;
+    // std::cout << "out.B.B1.tT : " << out.B.B1.tT << " | out.B.B1.tF : " << out.B.B1.tF << std::endl;
+    // std::cout << "out.B.B2.tT : " << out.B.B2.tT << " | out.B.B2.tF : " << out.B.B2.tF << std::endl;
+    // std::cout << "out.B.B3.tT : " << out.B.B3.tT << " | out.B.B3.tF : " << out.B.B3.tF << std::endl;
+    // std::cout << "out.B.B4.tT : " << out.B.B4.tT << " | out.B.B4.tF : " << out.B.B4.tF << std::endl;
+    // std::cout << "out.B.B5.tT : " << out.B.B5.tT << " | out.B.B5.tF : " << out.B.B5.tF << std::endl;
+    // std::cout << "out.B.B6.tT : " << out.B.B6.tT << " | out.B.B6.tF : " << out.B.B6.tF << std::endl;
+    // std::cout << "out.B.B7.tT : " << out.B.B7.tT << " | out.B.B7.tF : " << out.B.B7.tF << std::endl;
+    // std::cout << "out.B.B8.tT : " << out.B.B8.tT << " | out.B.B8.tF : " << out.B.B8.tF << std::endl;
+    // std::cout << "out.B.B9.tT : " << out.B.B9.tT << " | out.B.B9.tF : " << out.B.B9.tF << std::endl;
+    // std::cout << "out.B.B10.tT : " << out.B.B10.tT << " | out.B.B10.tF : " << out.B.B10.tF << std::endl;
+    // std::cout << "out.B.B11.tT : " << out.B.B11.tT << " | out.B.B11.tF : " << out.B.B11.tF << std::endl;
+    // std::cout << "out.B.B12.tT : " << out.B.B12.tT << " | out.B.B12.tF : " << out.B.B12.tF << std::endl;
+    // std::cout << "out.B.B13.tT : " << out.B.B13.tT << " | out.B.B13.tF : " << out.B.B13.tF << std::endl;
+    // std::cout << "out.B.B14.tT : " << out.B.B14.tT << " | out.B.B14.tF : " << out.B.B14.tF << std::endl;
+    // std::cout << "out.B.B15.tT : " << out.B.B15.tT << " | out.B.B15.tF : " << out.B.B15.tF << std::endl;
+    // std::cout << "out.B.B16.tT : " << out.B.B16.tT << " | out.B.B16.tF : " << out.B.B16.tF << std::endl;
+    // std::cout << "out.B.B17.tT : " << out.B.B17.tT << " | out.B.B17.tF : " << out.B.B17.tF << std::endl;
+    // std::cout << "out.B.B18.tT : " << out.B.B18.tT << " | out.B.B18.tF : " << out.B.B18.tF << std::endl;
+    // std::cout << "out.B.B19.tT : " << out.B.B19.tT << " | out.B.B19.tF : " << out.B.B19.tF << std::endl;
+    // std::cout << "out.B.B20.tT : " << out.B.B20.tT << " | out.B.B20.tF : " << out.B.B20.tF << std::endl;
+    // std::cout << "out.B.B21.tT : " << out.B.B21.tT << " | out.B.B21.tF : " << out.B.B21.tF << std::endl;
+    // std::cout << "out.B.B22.tT : " << out.B.B22.tT << " | out.B.B22.tF : " << out.B.B22.tF << std::endl;
+    // std::cout << "out.B.B23.tT : " << out.B.B23.tT << " | out.B.B23.tF : " << out.B.B23.tF << std::endl;
+    // std::cout << "out.B.B24.tT : " << out.B.B24.tT << " | out.B.B24.tF : " << out.B.B24.tF << std::endl;
+    // std::cout << "out.B.B25.tT : " << out.B.B25.tT << " | out.B.B25.tF : " << out.B.B25.tF << std::endl;
+    // std::cout << "out.B.B26.tT : " << out.B.B26.tT << " | out.B.B26.tF : " << out.B.B26.tF << std::endl;
+    // std::cout << "out.B.B27.tT : " << out.B.B27.tT << " | out.B.B27.tF : " << out.B.B27.tF << std::endl;
+    // std::cout << "out.B.B28.tT : " << out.B.B28.tT << " | out.B.B28.tF : " << out.B.B28.tF << std::endl;
+    // std::cout << "out.B.B29.tT : " << out.B.B29.tT << " | out.B.B29.tF : " << out.B.B29.tF << std::endl;
+    // std::cout << "out.B.B30.tT : " << out.B.B30.tT << " | out.B.B30.tF : " << out.B.B30.tF << std::endl;
+    // std::cout << "out.B.B31.tT : " << out.B.B31.tT << " | out.B.B31.tF : " << out.B.B31.tF << std::endl;
+    // std::cout << "out.Cout.tT : " << out.Cout.tT << " | out.Cout.tF : " << out.Cout.tF << std::endl;
     return max;
 }
 void findDRKSA32Delay()
@@ -486,7 +519,7 @@ void findDRKSA32Delay()
     unsigned int max = 0, maxA, maxB, maxC;
     unsigned int min = 999, minA, minB, minC;
     std::random_device rd; 
-    std::mt19937 gen(rd()); 
+    std::mt19937 gen(0); 
     std::uniform_int_distribution<uint32_t> distr(0, 0xFFFFFFFF);
 
     int iters = 1000000;
@@ -526,5 +559,8 @@ void findDRKSA32Delay()
     std::cout << "MinB : " << minB << std::endl;
     std::cout << "MinC : " << minC << std::endl;
 
+    // DRKSA32Wrapper(0, 0, 0);
+    // DRKSA32Wrapper(4294967295, 4294967295, 1);
+    // DRKSA32Wrapper(4294967295, 0, 1);
     return;
 }

@@ -324,7 +324,7 @@ class cell
 
 std::vector<std::vector<uint8_t>> SHA256_Pipelined(std::vector<std::vector<uint8_t>> &paddeds)
 {
-    std::ofstream file("shaPIPELINED.txt");
+    // std::ofstream file("shaPIPELINED.txt");
 
     int endingTimes[vectorLength] = {0};
     std::vector<std::vector<uint8_t>> finalOuts;
@@ -389,8 +389,8 @@ std::vector<std::vector<uint8_t>> SHA256_Pipelined(std::vector<std::vector<uint8
             finalOuts.push_back(digest);
             endingTimes[paddedsOutCounter] = gateCount;
             std::string myHash = toHex(digest);
-            // std::cout << "Entry " << paddedsOutCounter << " exit time :\t" << endingTimes[paddedsOutCounter] << "\t" << myHash << std::endl;
-            file << "Entry " << paddedsOutCounter << " exit time :\t" << endingTimes[paddedsOutCounter] << "\t" << myHash << std::endl;
+            std::cout << "Entry " << paddedsOutCounter << " exit time :\t" << endingTimes[paddedsOutCounter] << "\t" << myHash << std::endl;
+            // file << "Entry " << paddedsOutCounter << " exit time :\t" << endingTimes[paddedsOutCounter] << "\t" << myHash << std::endl;
             paddedsOutCounter++;
         }
         
@@ -433,7 +433,7 @@ std::vector<std::vector<uint8_t>> SHA256_Pipelined(std::vector<std::vector<uint8
     }
     while(paddedsOutCounter != vectorLength);
 
-    file.close();
+    // file.close();
 
     return finalOuts;
 }
@@ -451,21 +451,6 @@ int main()
     for(int i=0;i<vectorLength;i++) paddeds[i] = padInput(datas[i]);
 
     std::vector<std::vector<uint8_t>> hashes = SHA256_Pipelined(paddeds);
-
-
-    
-    // std::string input = "abc";
-
-    // // Convert string to bytes
-    // std::vector<uint8_t> data(input.begin(), input.end());
-
-    // // Pad input
-    // std::vector<uint8_t> padded = padInput(data);
-
-    // std::vector<uint8_t> hash = SHA256_Onecycle(padded);
-    // std::string myHash = toHex(hash);
-
-    // std::cout << myHash << "\n";
 
     // int i = findKSA32Delay();
 

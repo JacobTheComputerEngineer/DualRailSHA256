@@ -727,8 +727,8 @@ class cell
 std::vector<std::vector<uint8_t>> DR_SHA256_Pipelined(std::vector<std::vector<uint8_t>> &paddeds)
 {
     // std::ofstream file("shaDUALRAIL.txt");
-    std::ofstream exitTimes("shaDUALRAIL_Exits.txt");
-    std::ofstream enterTimes("shaDUALRAIL_Enters.txt");
+    // std::ofstream exitTimes("shaDUALRAIL_Exits.txt");
+    // std::ofstream enterTimes("shaDUALRAIL_Enters.txt");
 
     int endingTimes[vectorLength] = {0};
     std::vector<std::vector<uint8_t>> finalOuts;
@@ -794,9 +794,9 @@ do
                 finalOuts.push_back(digest);
                 endingTimes[paddedsOutCounter] = getRoundLatestArrival(c[i].H);
                 std::string myHash = toHex(digest);
-                // std::cout << "Entry " << paddedsOutCounter << " exit time :\t" << endingTimes[paddedsOutCounter] << "\t" << myHash << std::endl;
+                std::cout << "Entry " << paddedsOutCounter << " exit time :\t" << endingTimes[paddedsOutCounter] << "\t" << myHash << std::endl;
                 // file << "Entry " << paddedsOutCounter << " exit time :\t" << endingTimes[paddedsOutCounter] << "\t" << myHash << std::endl;
-                exitTimes << paddedsOutCounter << " : " << endingTimes[paddedsOutCounter] << std::endl;
+                // exitTimes << paddedsOutCounter << " : " << endingTimes[paddedsOutCounter] << std::endl;
 
 
                 paddedsOutCounter++;
@@ -876,7 +876,7 @@ do
             c[0].g = H[6];
             c[0].h = H[7];
 
-            enterTimes << paddedsInCounter << " : " << gateCount << std::endl;
+            // enterTimes << paddedsInCounter << " : " << gateCount << std::endl;
 
             paddedsInCounter++;
         }
@@ -906,8 +906,8 @@ do
     // }
 
     // file.close();
-    exitTimes.close();
-    enterTimes.close();
+    // exitTimes.close();
+    // enterTimes.close();
 
     return finalOuts;
 
@@ -926,12 +926,6 @@ int main()
     for(int i=0;i<vectorLength;i++) paddeds[i] = padInput(datas[i]);
 
     std::vector<std::vector<uint8_t>> hashes = DR_SHA256_Pipelined(paddeds);
-
-    // for(int i=0;i<vectorLength;i++)
-    // {
-    //     std::string myHash = toHex(hashes[i]);
-    //     std::cout << myHash << "\n";
-    // }
 
     // findDRKSA32Delay();
 
